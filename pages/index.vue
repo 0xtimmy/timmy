@@ -23,13 +23,13 @@
           :style="{
             'background-color': '#262626',
             color: '#fbfbfb',
-            width: '9ch',
+            width: '12ch',
           }"
           v-if="said"
         >
           howdy!
         </div>
-        <div class="" :style="{ width: '9ch' }" v-else @click="said = true">
+        <div class="" :style="{ width: '12ch' }" v-else @click="said = true">
           say hi!
         </div>
         <div
@@ -62,6 +62,19 @@ export default Vue.extend({
       hellos: 0,
     }
   },
+  /*
+  created: function () {
+    fetch(
+      'https://api.cloudflare.com/client/v4/accounts/e261f5d163b031e6089cbda4c340dfa4/storage/kv/namespaces/891993803acb402dbaf42dfcda589298/values/num',
+      {
+        method: 'GET',
+      }
+    ).then((response: any) => {
+      console.log('get hellos response')
+      this.hellos = response
+    })
+  },
+  */
 })
 </script>
 
