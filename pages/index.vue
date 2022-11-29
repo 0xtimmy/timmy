@@ -42,7 +42,7 @@ export default Vue.extend({
     fetch('https://timmy-api.palou.workers.dev/', {
       method: 'GET',
     }).then((response: any) => {
-      response.text().then((result) => {
+      response.text().then((result: string) => {
         console.log('got result', result)
         this.hellos = parseInt(result)
       })
