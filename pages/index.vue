@@ -12,7 +12,7 @@
         <a href="https://rainbow.me/0xtimotheus.eth">0xtimotheus.eth</a>
       </p>
       <p>
-        I'm a just guy who really likes making things. Currently I'm developing
+        I'm a just guy who really likes making things. Currently, I'm developing
         a text editor for <a href="https://urbit.org/">Urbit</a> w/
         <a href="https://avalonlabs.earth/">Avalon Labs</a> and playing with
         distributed systems along the way.
