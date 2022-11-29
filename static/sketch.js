@@ -27,8 +27,8 @@ function draw() {
     let yoff = noise((x[i] + 1000) * s, (y[i] + 1000) * s)
     let vmag = noise((x[i] + 2000) * s, (y[i] + 2000) * s)
     let angle = tan(yoff * 6, xoff * 6)
-    x[i] = x[i] + cos(angle) * vmag * 2
-    y[i] = y[i] + sin(angle) * vmag * 2
+    x[i] = x[i] + cos(angle) * vmag * 0.6
+    y[i] = y[i] + sin(angle) * vmag * 0.6
     if ((x[i] < 0 || x[i] > width) && (y[i] < 0 || y[i] > height)) {
       x[i] = random() * width
       y[i] = random() * height
