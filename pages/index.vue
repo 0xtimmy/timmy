@@ -13,9 +13,9 @@
       </p>
       <p>
         I'm a just guy who really likes making things. Currently I'm developing
-        a text editor for <a href="#">Urbit</a> w/
-        <a href="#">Avalon Labs</a> and playing with distributed systems along
-        the way.
+        a text editor for <a href="https://urbit.org/">Urbit</a> w/
+        <a href="https://avalonlabs.earth/">Avalon Labs</a> and playing with
+        distributed systems along the way.
       </p>
       <button type="button" name="button">
         <div
