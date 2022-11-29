@@ -17,33 +17,9 @@
         <a href="https://avalonlabs.earth/">Avalon Labs</a> and playing with
         distributed systems along the way.
       </p>
-      <button type="button" name="button">
-        <div
-          class=""
-          :style="{
-            'background-color': '#262626',
-            color: '#fbfbfb',
-            width: '12ch',
-          }"
-          v-if="said"
-        >
-          howdy!
-        </div>
-        <div class="" :style="{ width: '12ch' }" v-else @click="said = true">
-          say hi!
-        </div>
-        <div
-          class=""
-          :style="
-            said
-              ? {
-                  'background-color': '#262626',
-                  color: '#fbfbfb',
-                  'border-color': '#fbfbfb',
-                }
-              : {}
-          "
-        >
+      <button type="button" name="button" @click="say">
+        <div class="">say hi!</div>
+        <div class="">
           {{ `${hellos}`.padStart(3, '0') }}
         </div>
       </button>
@@ -62,19 +38,24 @@ export default Vue.extend({
       hellos: 0,
     }
   },
-  /*
-  created: function () {
-    fetch(
-      'https://api.cloudflare.com/client/v4/accounts/e261f5d163b031e6089cbda4c340dfa4/storage/kv/namespaces/891993803acb402dbaf42dfcda589298/values/num',
-      {
-        method: 'GET',
-      }
-    ).then((response: any) => {
-      console.log('get hellos response')
-      this.hellos = response
+  mounted: function () {
+    fetch('https://timmy-api.palou.workers.dev/', {
+      method: 'GET',
+    }).then((response: any) => {
+      response.text().then((result) => {
+        console.log('got result', result)
+        this.hellos = parseInt(result)
+      })
     })
   },
-  */
+  methods: {
+    say: function () {
+      this.hellos = this.hellos + 1
+      fetch('https://timmy-api.palou.workers.dev/', {
+        method: 'POST',
+      })
+    },
+  },
 })
 </script>
 
