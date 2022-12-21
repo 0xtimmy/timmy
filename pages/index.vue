@@ -30,7 +30,7 @@
         <h3><a href="https://github.com/holium/engram" target="_blank">Engram</a></h3>
         <p>
           A peer to peer document editor for the <a href="https://urbit.org/">urbit</a> ecosystem. Built with prosemirror, yjs and our own custom crdts. <br>
-          <a href="https://www.youtube.com/watch?t=570&v=Q-MtMu-Jbf4&feature=youtu.be", target="_blank">At Assembly</a>
+          <a href="https://www.youtube.com/watch?t=570&v=Q-MtMu-Jbf4&feature=youtu.be" target="_blank">At Assembly</a>
           <a href="https://twitter.com/jmrphy/status/1604583510014058497" target="_blank">On Twitter</a>
         </p>
         <h3><a href="https://lab.avalonlabs.earth/" target="_blank">UX Lab</a></h3>
