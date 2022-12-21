@@ -9,7 +9,7 @@
           <a href="mailto:timothyfhein@gmail.com">Email</a> |
           <a href="https://twitter.com/talltimofficial">Twitter</a> |
           <a href="https://github.com/0xtimotheus">Github</a> |
-          <a href="https://~dalsyr-diglyn.avalonlabs.earth">~dalsyr-diglyn</a> |
+          <a href="https://dalsyr-diglyn.avalonlabs.earth">~dalsyr-diglyn</a> |
           <a href="https://rainbow.me/0xtimotheus.eth">0xtimotheus.eth</a>
         </p>
         <p>
