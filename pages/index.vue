@@ -21,7 +21,7 @@
         <button type="button" name="button" @click="say">
           <div class="">say hi!</div>
           <div class="">
-            {{ hellobutton }}
+            {{ hellos < 10 ? "00" : hellos < 100 ? "0" : ""  }}  {{ hellos }}
           </div>
         </button>
       </section>
@@ -66,15 +66,6 @@ export default Vue.extend({
         this.hellos = parseInt(result)
       })
     })
-  },
-  computed: {
-    hellobutton: function() {
-      let out = `${this.hellos}`;
-      while(out.length < 3) {
-        out = "0" + out;
-      }
-      return out;
-    }
   },
   methods: {
     say: function () {
