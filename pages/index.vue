@@ -18,12 +18,14 @@
           <a href="https://avalonlabs.earth/">Avalon Labs</a> and playing with
           distributed systems along the way.
         </p>
+        <!--
         <button type="button" name="button" @click="say">
           <div class="">say hi!</div>
           <div class="">
             {{ hellobutton }}
           </div>
         </button>
+        -->
       </section>
       <section>
         <h2>Projects</h2>
