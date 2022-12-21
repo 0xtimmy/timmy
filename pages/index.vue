@@ -5,6 +5,7 @@
     <main class="">
       <section>
         <h1 class="mb-0">Hi, I'm Timmy</h1>
+        <!--
         <p class="text-sm">
           <a href="mailto:timothyfhein@gmail.com">Email</a> |
           <a href="https://twitter.com/talltimofficial">Twitter</a> |
@@ -12,6 +13,7 @@
           <a href="https://dalsyr-diglyn.avalonlabs.earth">~dalsyr-diglyn</a> |
           <a href="https://rainbow.me/0xtimotheus.eth">0xtimotheus.eth</a>
         </p>
+        -->
         <p>
           I'm a just guy who really likes making things. Currently, I'm developing
           a text editor for <a href="https://urbit.org/">Urbit</a> w/
@@ -25,7 +27,6 @@
           </div>
         </button>
       </section>
-      <!--
       <section>
         <h2>Projects</h2>
         <h3><a href="https://github.com/holium/engram" target="_blank">Engram</a></h3>
@@ -43,7 +44,6 @@
           A lil script to give your <a href="https://wizardsdao.com/" target="_blank">wizard</a> fun lil animations.
         </p>
       </section>
-      -->
     </main>
   </div>
 </template>
@@ -65,7 +65,16 @@ export default Vue.extend({
     }).then((response: any) => {
       response.text().then((result: string) => {
         console.log('got result', result)
-        this.hellos = parseInt(result)
+        let num = parseInt(result);
+        (async () => {
+          let start = Date.now()
+          while(this.hellos < num) {
+            const i = Date.now() - start
+            this.hellos = Math.floor(num * (1 - Math.pow(Math.E, -i / (1.68 * num)))) + 1
+            await new Promise((res) => { setTimeout(res, 10)});
+          }
+          this.hellos = num;
+        })()
       })
     })
   },
