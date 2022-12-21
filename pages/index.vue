@@ -5,7 +5,6 @@
     <main class="">
       <section>
         <h1 class="mb-0">Hi, I'm Timmy</h1>
-        <!--
         <p class="text-sm">
           <a href="mailto:timothyfhein@gmail.com">Email</a> |
           <a href="https://twitter.com/talltimofficial">Twitter</a> |
@@ -13,7 +12,6 @@
           <a href="https://dalsyr-diglyn.avalonlabs.earth">~dalsyr-diglyn</a> |
           <a href="https://rainbow.me/0xtimotheus.eth">0xtimotheus.eth</a>
         </p>
-        -->
         <p>
           I'm a just guy who really likes making things. Currently, I'm developing
           a text editor for <a href="https://urbit.org/">Urbit</a> w/
@@ -31,7 +29,7 @@
         <h2>Projects</h2>
         <h3><a href="https://github.com/holium/engram" target="_blank">Engram</a></h3>
         <p>
-          A peer to peer document editor for the <a href="https://urbit.org/">urbit</a> ecosystem. Built with prosemirror, yjs and our own custom crdts. </br>
+          A peer to peer document editor for the <a href="https://urbit.org/">urbit</a> ecosystem. Built with prosemirror, yjs and our own custom crdts. <br>
           <a href="https://www.youtube.com/watch?t=570&v=Q-MtMu-Jbf4&feature=youtu.be", target="_blank">At Assembly</a>
           <a href="https://twitter.com/jmrphy/status/1604583510014058497" target="_blank">On Twitter</a>
         </p>
