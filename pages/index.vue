@@ -18,15 +18,14 @@
           <a href="https://avalonlabs.earth/">Avalon Labs</a> and playing with
           distributed systems along the way.
         </p>
-        <!--
         <button type="button" name="button" @click="say">
           <div class="">say hi!</div>
           <div class="">
             {{ hellos < 10 ? "00" : hellos < 100 ? "0" : ""  }}{{ hellos }}
           </div>
         </button>
-        -->
       </section>
+      <!--
       <section>
         <h2>Projects</h2>
         <h3><a href="https://github.com/holium/engram" target="_blank">Engram</a></h3>
@@ -44,6 +43,7 @@
           A lil script to give your <a href="https://wizardsdao.com/" target="_blank">wizard</a> fun lil animations.
         </p>
       </section>
+      -->
     </main>
   </div>
 </template>
