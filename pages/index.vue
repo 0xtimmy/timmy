@@ -33,13 +33,17 @@
           <a href="https://www.youtube.com/watch?t=570&v=Q-MtMu-Jbf4&feature=youtu.be" target="_blank">At Assembly</a>
           <a href="https://twitter.com/jmrphy/status/1604583510014058497" target="_blank">On Twitter</a>
         </p>
-        <h3><a href="https://lab.avalonlabs.earth/" target="_blank">UX Lab</a></h3>
+        <h3><a href="https://github.com/0xtimotheus/diffusioninanevening">Image Diffuser in One Weekend</a></h3>
         <p>
-          A small prototyping repo.
+          An agressively basic image diffusion script. Outputs are pretty good if left running for several days.
+        </p>
+        <h3><a href="https://github.com/0xtimotheus/Ray-Tracing" target="_blank">Ray Tracing in One Week</a></h3>
+        <p>
+          A c++ script that uses ray tracing to render a scene. Inspired by the <a href="https://raytracing.github.io/books/RayTracingInOneWeekend.html">Ray Tracing in One Weekend</a> book series.
         </p>
         <h3><a href="https://0xtimotheus.github.io/wiz-animations/" target="_blank">Wizards Animator</a></h3>
         <p>
-          A lil script to give your <a href="https://wizardsdao.com/" target="_blank">wizard</a> fun lil animations.
+          A script to give your <a href="https://wizardsdao.com/" target="_blank">wizard's dao</a> NFT fun lil animations.
         </p>
       </section>
     </main>
@@ -58,7 +62,7 @@ export default Vue.extend({
     }
   },
   mounted: function () {
-    fetch('https://timmy-api.palou.workers.dev/', {
+    fetch('https://timmy-api.0xtimmy.workers.dev/', {
       method: 'GET',
     }).then((response: any) => {
       response.text().then((result: string) => {
@@ -79,7 +83,7 @@ export default Vue.extend({
   methods: {
     say: function () {
       this.hellos = this.hellos + 1
-      fetch('https://timmy-api.palou.workers.dev/', {
+      fetch('https://timmy-api.0xtimmy.workers.dev/', {
         method: 'POST',
       })
     },
