@@ -13,10 +13,8 @@
           <a href="https://rainbow.me/0xtimotheus.eth">0xtimotheus.eth</a>
         </p>
         <p>
-          I'm a just guy who really likes making things. Currently, I'm developing
-          a text editor for <a href="https://urbit.org/" target="_blank">Urbit</a> w/
-          <a href="https://avalonlabs.earth/" target="_blank">Avalon Labs</a> and playing with
-          distributed systems along the way.
+          I'm a just guy who likes computers. I'm currently studying <a href="https://github.com/0xtimotheus/asics">digital design</a> at Purdue. In my spare time I'm developing
+          a P2P text editor for <a href="https://urbit.org/" target="_blank">Urbit</a> w/ CRDTs. Below are some other things I've built for fun :)
         </p>
         <button type="button" name="button" @click="say">
           <div class="">say hi!</div>
