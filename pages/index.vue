@@ -13,7 +13,7 @@
           <a href="https://rainbow.me/0xtimotheus.eth">0xtimotheus.eth</a>
         </p>
         <p>
-          I'm a just guy who likes computers. I'm currently studying <a href="https://github.com/0xtimotheus/asics">digital design</a> at Purdue. In my spare time I'm developing
+          I'm a just guy who likes computers. I'm currently studying <a href="https://github.com/0xtimotheus/cpu">digital design</a> at Purdue. In my spare time I'm developing
           a P2P text editor for <a href="https://urbit.org/" target="_blank">Urbit</a> w/ CRDTs. Below are some other things I've built for fun :)
         </p>
         <button type="button" name="button" @click="say">
@@ -30,6 +30,10 @@
           A peer to peer document editor for the <a href="https://urbit.org/">urbit</a> ecosystem. Built with prosemirror, yjs and our own custom crdts. <br>
           <a href="https://www.youtube.com/watch?t=570&v=Q-MtMu-Jbf4&feature=youtu.be" target="_blank">At Assembly</a>
           <a href="https://twitter.com/jmrphy/status/1604583510014058497" target="_blank">On Twitter</a>
+        </p>
+        <h3><a href="https://github.com/0xtimotheus/cpu">Pipelined CPU</a></h3>
+        <p>
+          A simple single cycle CPU. Continously improving it as I learn new things.
         </p>
         <h3><a href="https://github.com/0xtimotheus/diffusioninanevening">Image Diffuser in One Weekend</a></h3>
         <p>
