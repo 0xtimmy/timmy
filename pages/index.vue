@@ -78,7 +78,7 @@ export default Vue.extend({
           let start = Date.now()
           while(this.hellos < num) {
             const i = Date.now() - start
-            this.hellos = Math.floor(num * (1 - Math.pow(Math.E, -i / (1.68 * num)))) + 1
+            this.hellos = Math.floor(num * (1 - Math.pow(Math.E, -i / (2.8 * num)))) + 1
             await new Promise((res) => { setTimeout(res, 10)});
           }
           this.hellos = num;
