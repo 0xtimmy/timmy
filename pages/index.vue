@@ -25,6 +25,12 @@
       </section>
       <section>
         <h2>Projects</h2>
+        <h3><a href="https://github.com/0xtimmy/web-diffusion" target="_blank">Web Diffusion</a></h3>
+        <p>
+          A bare bones image [diffuser](https://arxiv.org/pdf/2006.11239.pdf) that runs in the browser. 
+          It uses a [transofrmer](https://arxiv.org/pdf/1706.03762.pdf) based model and custom GPU kernels that are run through [WebGPU](https://developer.chrome.com/blog/webgpu-release/).
+          You can access it live [here](https://web-diffusion.pages.dev/). 
+        </p>
         <h3><a href="https://github.com/holium/engram" target="_blank">Engram</a></h3>
         <p>
           A peer to peer document editor for the <a href="https://urbit.org/">urbit</a> ecosystem. Built with prosemirror, yjs and our own custom crdts. <br>
