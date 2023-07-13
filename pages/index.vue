@@ -7,49 +7,47 @@
         <h1 class="mb-0">Hi, I'm Timmy</h1>
         <p class="text-sm">
           <a href="mailto:timothyfhein@gmail.com">Email</a> |
-          <a href="https://twitter.com/talltimofficial">Twitter</a> |
-          <a href="https://github.com/0xtimotheus">Github</a> |
-          <a href="https://dalsyr-diglyn.avalonlabs.earth">~dalsyr-diglyn</a> |
-          <a href="https://rainbow.me/0xtimotheus.eth">0xtimotheus.eth</a>
+          <a href="https://github.com/0xtimmy">Github</a> |
+          <a href="https://www.linkedin.com/in/timothy-hein-1a9810178/">LinkedIn</a> |
+          <a href="https://twitter.com/talltimofficial">Twitter</a>
         </p>
         <p>
-          I'm a just guy who likes computers. I'm currently studying <a href="https://github.com/0xtimotheus/cpu">digital design</a> at Purdue. In my spare time I'm developing
-          a P2P text editor for <a href="https://urbit.org/" target="_blank">Urbit</a> w/ CRDTs. Below are some other things I've built for fun :)
+          I design <strong><a href="#cpu">computers</a></strong> and things to run on them<strong><a href="#web-diffusion">(1)</a></strong><strong><a href="#engram">(2)</a></strong>.
+          Currently studying Computer Engineering at Purdue Unviersity 🚂. <br>
+          🚩Looking to more of the same after grad🚩 <-- needs editing? <br><br>
+          In college I built a small software company to create sovereign software using distributed systems; we developed Engram as our premier product. <br>
+          Below is a quick roster of my other late night projects :)
         </p>
         <button type="button" name="button" @click="say">
           <div class="">say hi!</div>
           <div class="">
-            {{ hellos < 10 ? "00" : hellos < 100 ? "0" : ""  }}{{ hellos }}
+            {{ hellos < 10 ? "000" : hellos < 100 ? "00" : hellos < 1000 ? "0" : ""  }}{{ hellos }}
           </div>
         </button>
       </section>
       <section>
         <h2>Projects</h2>
-        <h3><a href="https://github.com/0xtimmy/web-diffusion" target="_blank">Web Diffusion</a></h3>
+        <h3><a id="web-diffusion" href="https://github.com/0xtimmy/web-diffusion" target="_blank">Web Diffusion</a></h3>
         <p>
-          A bare bones image [diffuser](https://arxiv.org/pdf/2006.11239.pdf) that runs in the browser. 
-          It uses a [transofrmer](https://arxiv.org/pdf/1706.03762.pdf) based model and custom GPU kernels that are run through [WebGPU](https://developer.chrome.com/blog/webgpu-release/).
-          You can access it live [here](https://web-diffusion.pages.dev/). 
+          A bare bones image <a href="https://arxiv.org/pdf/2006.11239.pdf" target="_blank">diffuser</a> that runs in the browser. 
+          It uses a <a href="https://arxiv.org/pdf/1706.03762.pdf" target="_blank">transofrmer</a> based model and custom GPU kernels that are run through <a href="https://developer.chrome.com/blog/webgpu-release/" target="_blank">WebGPU</a>.
+          You can access it live <a href="https://web-diffusion.pages.dev/" target="_blank">here</a>. 
         </p>
-        <h3><a href="https://github.com/holium/engram" target="_blank">Engram</a></h3>
+        <h3><a id="engram" href="https://github.com/holium/engram" target="_blank">Engram</a></h3>
         <p>
-          A peer to peer document editor for the <a href="https://urbit.org/">urbit</a> ecosystem. Built with prosemirror, yjs and our own custom crdts. <br>
+          An infrastructure-less collaborative document editor for the <a href="https://urbit.org/" target="_blank">urbit</a> ecosystem. Built with prosemirror, yjs and our own custom crdts. <br>
           <a href="https://www.youtube.com/watch?t=570&v=Q-MtMu-Jbf4&feature=youtu.be" target="_blank">At Assembly</a>
           <a href="https://twitter.com/jmrphy/status/1604583510014058497" target="_blank">On Twitter</a>
         </p>
-        <h3><a href="https://github.com/0xtimotheus/cpu">Pipelined CPU</a></h3>
+        <h3><a id="cpu" href="https://github.com/0xtimmy/cpu">Pipelined CPU</a></h3>
         <p>
           A simple single cycle CPU. Continously improving it as I learn new things.
         </p>
-        <h3><a href="https://github.com/0xtimotheus/diffusioninanevening">Image Diffuser in One Weekend</a></h3>
-        <p>
-          An agressively basic image diffusion script. Outputs are pretty good if left running for several days.
-        </p>
-        <h3><a href="https://github.com/0xtimotheus/Ray-Tracing" target="_blank">Ray Tracing in One Week</a></h3>
+        <h3><a href="https://github.com/0xtimmy/Ray-Tracing" target="_blank">Ray Tracing in One Week</a></h3>
         <p>
           A c++ script that uses ray tracing to render a scene. Inspired by the <a href="https://raytracing.github.io/books/RayTracingInOneWeekend.html">Ray Tracing in One Weekend</a> book series.
         </p>
-        <h3><a href="https://0xtimotheus.github.io/wiz-animations/" target="_blank">Wizards Animator</a></h3>
+        <h3><a href="https://0xtimmy.github.io/wiz-animations/" target="_blank">Wizards Animator</a></h3>
         <p>
           A script to give your <a href="https://wizardsdao.com/" target="_blank">wizard's dao</a> NFT fun lil animations.
         </p>
@@ -114,6 +112,10 @@ canvas {
   right: 0;
   width: 720px;
   height: 1200px;
+}
+
+strong a {
+  text-decoration: none;
 }
 
 @media (max-width: 1440px) {
