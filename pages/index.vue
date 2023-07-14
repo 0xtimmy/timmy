@@ -12,11 +12,12 @@
           <a href="https://twitter.com/talltimofficial">Twitter</a>
         </p>
         <p>
-          I design <strong><a href="#cpu">computers</a></strong> and things to run on them<strong><a href="#web-diffusion">(1)</a></strong><strong><a href="#engram">(2)</a></strong>.
-          Currently studying Computer Engineering at Purdue Unviersity 🚂. <br>
-          🚩Looking to more of the same after grad🚩 <-- needs editing? <br><br>
+          I design <strong><a href="#cpu" @click="panto('#cpu')">computers</a></strong> and things to run on them<strong><a href="#web-diffusion" @click="panto('#web-diffusion')">(1)</a></strong><strong><a href="#engram" @click="panto('#engram')">(2)</a></strong>.
+          Currently studying Computer Engineering at Purdue Unviersity 🚂 and looking to continue working on the hardware-software boundary post-grad.
+        </p>
+        <p>
           In college I built a small software company to create sovereign software using distributed systems; we developed Engram as our premier product. <br>
-          Below is a quick roster of my other late night projects :)
+          Below is a quick roster of my late night projects :)
         </p>
         <button type="button" name="button" @click="say">
           <div class="">say hi!</div>
@@ -27,19 +28,19 @@
       </section>
       <section>
         <h2>Projects</h2>
-        <h3><a id="web-diffusion" href="https://github.com/0xtimmy/web-diffusion" target="_blank">Web Diffusion</a></h3>
+        <h3 :style="styles['web-diffusion']"><a id="web-diffusion" href="https://github.com/0xtimmy/web-diffusion" target="_blank">Web Diffusion</a></h3>
         <p>
           A bare bones image <a href="https://arxiv.org/pdf/2006.11239.pdf" target="_blank">diffuser</a> that runs in the browser. 
           It uses a <a href="https://arxiv.org/pdf/1706.03762.pdf" target="_blank">transofrmer</a> based model and custom GPU kernels that are run through <a href="https://developer.chrome.com/blog/webgpu-release/" target="_blank">WebGPU</a>.
           You can access it live <a href="https://web-diffusion.pages.dev/" target="_blank">here</a>. 
         </p>
-        <h3><a id="engram" href="https://github.com/holium/engram" target="_blank">Engram</a></h3>
+        <h3 :style="styles['engram']"><a id="engram" href="https://github.com/holium/engram" target="_blank">Engram</a></h3>
         <p>
           An infrastructure-less collaborative document editor for the <a href="https://urbit.org/" target="_blank">urbit</a> ecosystem. Built with prosemirror, yjs and our own custom crdts. <br>
           <a href="https://www.youtube.com/watch?t=570&v=Q-MtMu-Jbf4&feature=youtu.be" target="_blank">At Assembly</a>
           <a href="https://twitter.com/jmrphy/status/1604583510014058497" target="_blank">On Twitter</a>
         </p>
-        <h3><a id="cpu" href="https://github.com/0xtimmy/cpu">Pipelined CPU</a></h3>
+        <h3 :style="styles['cpu']"><a id="cpu" href="https://github.com/0xtimmy/cpu">Pipelined CPU</a></h3>
         <p>
           A simple single cycle CPU. Continously improving it as I learn new things.
         </p>
@@ -65,9 +66,17 @@ export default Vue.extend({
     return {
       said: false,
       hellos: 0,
+      styles: {
+        'web-diffusion': {},
+        'engram': {},
+        'cpu': {},
+      }
     }
   },
   mounted: function () {
+    if(window.location.href.includes("#web-diffusion")) this.styles['web-diffusion'] = { 'font-weight': '500' };
+    if(window.location.href.includes("#engram")) this.styles['engram'] = { 'font-weight': '500' };
+    if(window.location.href.includes("#cpu")) this.styles['cpu'] = { 'font-weight': '500' };
     fetch('https://timmy-api.0xtimmy.workers.dev/', {
       method: 'GET',
     }).then((response: any) => {
@@ -87,6 +96,11 @@ export default Vue.extend({
     })
   },
   methods: {
+    panto: function(headline: string) {
+      this.styles['web-diffusion'] = headline == '#web-diffusion' ? { 'font-weight': '500' } : {};
+      this.styles['engram'] = headline == '#engram' ? { 'font-weight': '500' } : {};
+      this.styles['cpu'] = headline == '#cpu' ? { 'font-weight': '500' } : {};
+    },
     say: function () {
       this.hellos = this.hellos + 1
       fetch('https://timmy-api.0xtimmy.workers.dev/', {
@@ -103,6 +117,7 @@ export default Vue.extend({
 }
 main {
   width: calc(50vw - 72px);
+  max-width: 60ch;
 }
 
 canvas {
