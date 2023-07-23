@@ -31,7 +31,7 @@
         <h3 :style="styles['web-diffusion']"><a id="web-diffusion" href="https://github.com/0xtimmy/web-diffusion" target="_blank">Web Diffusion</a></h3>
         <p>
           A bare bones image <a href="https://arxiv.org/pdf/2006.11239.pdf" target="_blank">diffuser</a> that runs in the browser. 
-          It uses a <a href="https://arxiv.org/pdf/1706.03762.pdf" target="_blank">transofrmer</a> based model and custom GPU kernels that are run through <a href="https://developer.chrome.com/blog/webgpu-release/" target="_blank">WebGPU</a>.
+          It uses a <a href="https://arxiv.org/pdf/1706.03762.pdf" target="_blank">transformer</a> based model and custom GPU kernels that are run through <a href="https://developer.chrome.com/blog/webgpu-release/" target="_blank">WebGPU</a>.
           You can access it live <a href="https://web-diffusion.pages.dev/" target="_blank">here</a>. 
         </p>
         <h3 :style="styles['engram']"><a id="engram" href="https://github.com/holium/engram" target="_blank">Engram</a></h3>
