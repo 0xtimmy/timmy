@@ -12,7 +12,7 @@
           <a href="https://twitter.com/talltimofficial">Twitter</a>
         </p>
         <p>
-          I design <strong><a href="#cpu" @click="panto('#cpu')">computers</a></strong> and things to run on them<strong><a href="#web-diffusion" @click="panto('#web-diffusion')">(1)</a></strong><strong><a href="#engram" @click="panto('#engram')">(2)</a></strong>.
+          I design <strong><a href="#aftx07" @click="panto('#aftx07')">computers</a></strong> and things to run on them<strong><a href="#web-diffusion" @click="panto('#web-diffusion')">(1)</a></strong><strong><a href="#engram" @click="panto('#engram')">(2)</a></strong>.
           Currently studying Computer Engineering at Purdue Unviersity 🚂 and looking to continue working on the hardware-software boundary post-grad.
         </p>
         <p>
@@ -34,15 +34,15 @@
           It uses a <a href="https://arxiv.org/pdf/1706.03762.pdf" target="_blank">transformer</a> based model and custom GPU kernels that are run through <a href="https://developer.chrome.com/blog/webgpu-release/" target="_blank">WebGPU</a>.
           You can access it live <a href="https://web-diffusion.pages.dev/" target="_blank">here</a>. 
         </p>
+        <h3 :style="styles['aftx07']"><a id="aftx07" href="https://github.com/Purdue-SoCET/AFTx07" target="_blank">AFTx07</a></h3>
+        <p>
+          A RISC-V microcontroller designed from scratch by the Purdue SoCET team.
+        </p>
         <h3 :style="styles['engram']"><a id="engram" href="https://github.com/holium/engram" target="_blank">Engram</a></h3>
         <p>
           An infrastructure-less collaborative document editor for the <a href="https://urbit.org/" target="_blank">urbit</a> ecosystem. Built with prosemirror, yjs and our own custom crdts. <br>
           <a href="https://www.youtube.com/watch?t=570&v=Q-MtMu-Jbf4&feature=youtu.be" target="_blank">At Assembly</a>
           <a href="https://twitter.com/jmrphy/status/1604583510014058497" target="_blank">On Twitter</a>
-        </p>
-        <h3 :style="styles['cpu']"><a id="cpu" href="https://github.com/0xtimmy/cpu">Pipelined CPU</a></h3>
-        <p>
-          A simple single cycle CPU. Continously improving it as I learn new things.
         </p>
         <h3><a href="https://github.com/0xtimmy/Ray-Tracing" target="_blank">Ray Tracing in One Week</a></h3>
         <p>
@@ -69,14 +69,14 @@ export default Vue.extend({
       styles: {
         'web-diffusion': {},
         'engram': {},
-        'cpu': {},
+        'aftx07': {},
       }
     }
   },
   mounted: function () {
     if(window.location.href.includes("#web-diffusion")) this.styles['web-diffusion'] = { 'font-weight': '500' };
     if(window.location.href.includes("#engram")) this.styles['engram'] = { 'font-weight': '500' };
-    if(window.location.href.includes("#cpu")) this.styles['cpu'] = { 'font-weight': '500' };
+    if(window.location.href.includes("#aftx07")) this.styles['aftx07'] = { 'font-weight': '500' };
     fetch('https://timmy-api.0xtimmy.workers.dev/', {
       method: 'GET',
     }).then((response: any) => {
@@ -99,7 +99,7 @@ export default Vue.extend({
     panto: function(headline: string) {
       this.styles['web-diffusion'] = headline == '#web-diffusion' ? { 'font-weight': '500' } : {};
       this.styles['engram'] = headline == '#engram' ? { 'font-weight': '500' } : {};
-      this.styles['cpu'] = headline == '#cpu' ? { 'font-weight': '500' } : {};
+      this.styles['aftx07'] = headline == '#cpu' ? { 'font-weight': '500' } : {};
     },
     say: function () {
       this.hellos = this.hellos + 1
