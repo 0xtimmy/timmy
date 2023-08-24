@@ -34,7 +34,7 @@
           It uses a <a href="https://arxiv.org/pdf/1706.03762.pdf" target="_blank">transformer</a> based model and custom GPU kernels that are run through <a href="https://developer.chrome.com/blog/webgpu-release/" target="_blank">WebGPU</a>.
           You can access it live <a href="https://web-diffusion.pages.dev/" target="_blank">here</a>. 
         </p>
-        <h3 :style="styles['aftx07']"><a id="aftx07" href="https://github.com/Purdue-SoCET/AFTx07" target="_blank">AFTx07</a></h3>
+        <h3 :style="styles['aftx07']"><a id="aftx07" href="https://github.com/Purdue-SoCET/RISCVBusiness" target="_blank">AFTx07</a></h3>
         <p>
           A RISC-V microcontroller designed from scratch by the Purdue SoCET team.
         </p>
