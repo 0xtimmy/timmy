@@ -9,15 +9,21 @@
           <a href="mailto:timothyfhein@gmail.com">Email</a> |
           <a href="https://github.com/0xtimmy">Github</a> |
           <a href="https://www.linkedin.com/in/timothy-hein-1a9810178/">LinkedIn</a> |
-          <a href="https://twitter.com/talltimofficial">Twitter</a>
+          <a href="https://twitter.com/gpucowboy">Twitter</a>
         </p>
         <p>
-          I design <strong><a href="#aftx07" @click="panto('#aftx07')">computers</a></strong> and things to run on them<strong><a href="#web-diffusion" @click="panto('#web-diffusion')">(1)</a></strong><strong><a href="#engram" @click="panto('#engram')">(2)</a></strong>.
-          Currently studying Computer Engineering at Purdue Unviersity 🚂 and looking to continue working on the hardware-software boundary post-grad.
+          I study <strong>computer engineering</strong> & research <strong>compilers</strong> under
+          <a href="https://engineering.purdue.edu/ECE/News/2023/prof-milind-kulkarni-takes-over-as-interim-head-of-elmore-family-school-of-electrical-&-computer-engineering" target="_blank">Professor Kulkarni</a>
+          at Purdue University.
+          I'm fascinated by the <strong>relationships between computer hardware & software</strong>
+          & spend my weekends using them to accelerate <strong>machine learning</strong>. 
+        </p><p>
+          I've been accepted to graduate school at Purdue & am <strong>looking for an internship</strong> at the <strong>intersection</strong> of <strong>machine learning & computer systems</strong>.
+          If any of the below is interesting feel free to grab my 
+          <strong><a href="https://docs.google.com/document/d/1NOS2OGzGnHa1Qe5jc1MfnIMcf8BYE1qIFokDsozPFa0/edit?usp=sharing" target="_blank"><u>resume</u></a></strong> & <strong>lets chat!</strong>
         </p>
         <p>
-          In college I built a small software company to create sovereign software using distributed systems; we developed Engram as our premier product. <br>
-          Below is a quick roster of my late night projects :)
+          Below is a quick roster of my work :)
         </p>
         <button type="button" name="button" @click="say">
           <div class="">say hi!</div>
@@ -28,22 +34,45 @@
       </section>
       <section>
         <h2>Projects</h2>
-        <h3 :style="styles['web-diffusion']"><a id="web-diffusion" href="https://github.com/0xtimmy/web-diffusion" target="_blank">Web Diffusion</a></h3>
+        <h3><a href="https://github.com/iu-parfunc/gibbon" target="_blank">Gibbon Compiler</a></h3>
         <p>
-          A bare bones image <a href="https://arxiv.org/pdf/2006.11239.pdf" target="_blank">diffuser</a> that runs in the browser. 
-          It uses a <a href="https://arxiv.org/pdf/1706.03762.pdf" target="_blank">transformer</a> based model and custom GPU kernels that are run through <a href="https://developer.chrome.com/blog/webgpu-release/" target="_blank">WebGPU</a>.
-          You can access it live <a href="https://web-diffusion.pages.dev/" target="_blank">here</a>. 
+          A haskell compiler for operating on serial data. 
+          Gibbon transforms pointer based data representations into packed representations, & as a result yields much faster traversals for structures like binary trees.
         </p>
-        <h3 :style="styles['aftx07']"><a id="aftx07" href="https://github.com/Purdue-SoCET/RISCVBusiness" target="_blank">AFTx07</a></h3>
+
+        <h3><a href="https://engineering.purdue.edu/SoC-Team" target="_blank">AFTx07 - Digital Design & Tapeout</a></h3>
         <p>
           A RISC-V microcontroller designed from scratch by the Purdue SoCET team.
+          Currently I am working on the tapeout flow to take our digital designs to manufacture, specifcally place 'n route & post-layout verification.
+          For digital design I worked on pipelining cache <-> memory transactions.
         </p>
-        <h3 :style="styles['engram']"><a id="engram" href="https://github.com/holium/engram" target="_blank">Engram</a></h3>
+
+        <h3>Glados</h3>
         <p>
-          An infrastructure-less collaborative document editor for the <a href="https://urbit.org/" target="_blank">urbit</a> ecosystem. Built with prosemirror, yjs and our own custom crdts. <br>
+          A AI voice assistant built from scratch on an NVIDIA Jetson. 
+          Designed as an experiment in lifelong learning, it sports an open source LLM, vector database of textbooks, academic litterature & past conversation.
+          Still in progress...
+        </p>
+
+        <h3>MIPS Multicore</h3>
+        <p>
+          A fully functional multicore, MIPS processor. Built from scratch for ECE 437. Can't link becasue prof will fail me :(
+        </p>
+
+        <h3><a href="https://github.com/0xtimmy/web-diffusion" target="_blank">Web Diffusion</a></h3>
+        <p>
+          A bare bones image <a href="https://arxiv.org/pdf/2006.11239.pdf" target="_blank">diffuser</a> that runs in the browser. 
+          It uses a <a href="https://arxiv.org/pdf/1706.03762.pdf" target="_blank">transformer</a> based model & custom GPU kernels that are run through <a href="https://developer.chrome.com/blog/webgpu-release/" target="_blank">WebGPU</a>.
+          You can access it live <a href="https://web-diffusion.pages.dev/" target="_blank">here</a>. 
+        </p>
+
+        <h3><a id="engram" href="https://github.com/holium/engram" target="_blank">Engram</a></h3>
+        <p>
+          An infrastructure-less collaborative document editor for the <a href="https://urbit.org/" target="_blank">urbit</a> ecosystem. Built with prosemirror, yjs & our own custom crdts. <br>
           <a href="https://www.youtube.com/watch?t=570&v=Q-MtMu-Jbf4&feature=youtu.be" target="_blank">At Assembly</a>
           <a href="https://twitter.com/jmrphy/status/1604583510014058497" target="_blank">On Twitter</a>
         </p>
+
         <h3><a href="https://github.com/0xtimmy/Ray-Tracing" target="_blank">Ray Tracing in One Week</a></h3>
         <p>
           A c++ script that uses ray tracing to render a scene. Inspired by the <a href="https://raytracing.github.io/books/RayTracingInOneWeekend.html">Ray Tracing in One Weekend</a> book series.
@@ -51,6 +80,22 @@
         <h3><a href="https://0xtimmy.github.io/wiz-animations/" target="_blank">Wizards Animator</a></h3>
         <p>
           A script to give your <a href="https://wizardsdao.com/" target="_blank">wizard's dao</a> NFT fun lil animations.
+        </p>
+      </section>
+      <section>
+        <h2>Personal History</h2>
+        <p>
+          I started <strong>researching distributed systems</strong> in my dorm room & after my first year of college <strong>I left to turn my work into a company</strong>.
+          Our focus was <strong>improving performance via network locality</strong>: if we can avoid using a server, clients only have to communicate with each other. 
+          Done right this is much faster.
+          At some point I started playing with image generation models & 
+          I realized <strong>machine learning</strong> was a much more <strong>important</strong> & <strong>daughting</strong> performance challenge than what we had been working on.
+          <br><br>
+          So I <strong>returned to Purdue</strong> to study the full breadth of computers, <strong>from high level software down to the silicon</strong>, in search for a solution.
+          Most notably I joined the compilers research team & the SoC research team, to get comfortable working on the <strong>hardware/software boundary</strong> from both sides.
+          <br><br>
+          AI is going to demand a new class of computer, like the iPhone for mobile in 2007, that can meet the specific characteristics of ML operations.
+          <strong>It is the purpose of my studies & work to engineer this next generation of computers.</strong>
         </p>
       </section>
     </main>
@@ -65,18 +110,10 @@ export default Vue.extend({
   data() {
     return {
       said: false,
-      hellos: 0,
-      styles: {
-        'web-diffusion': {},
-        'engram': {},
-        'aftx07': {},
-      }
+      hellos: 0
     }
   },
   mounted: function () {
-    if(window.location.href.includes("#web-diffusion")) this.styles['web-diffusion'] = { 'font-weight': '500' };
-    if(window.location.href.includes("#engram")) this.styles['engram'] = { 'font-weight': '500' };
-    if(window.location.href.includes("#aftx07")) this.styles['aftx07'] = { 'font-weight': '500' };
     fetch('https://timmy-api.0xtimmy.workers.dev/', {
       method: 'GET',
     }).then((response: any) => {
@@ -96,11 +133,6 @@ export default Vue.extend({
     })
   },
   methods: {
-    panto: function(headline: string) {
-      this.styles['web-diffusion'] = headline == '#web-diffusion' ? { 'font-weight': '500' } : {};
-      this.styles['engram'] = headline == '#engram' ? { 'font-weight': '500' } : {};
-      this.styles['aftx07'] = headline == '#cpu' ? { 'font-weight': '500' } : {};
-    },
     say: function () {
       this.hellos = this.hellos + 1
       fetch('https://timmy-api.0xtimmy.workers.dev/', {
