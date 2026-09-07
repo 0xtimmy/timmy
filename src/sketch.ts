@@ -1,7 +1,5 @@
 import p5 from 'p5'
 
-const SKETCH_WIDTH = 720
-const SKETCH_HEIGHT = 1200
 const SPACING = 12
 const NOISE_SCALE = 0.03
 const COLORS = ['#65a98f', '#f2ad78', '#5e4017', '#140a0f'] as const
@@ -16,12 +14,19 @@ export function mountSketch(host: HTMLElement): p5 {
     const yPositions: number[] = []
     const colorIndices: number[] = []
 
-    sketch.setup = () => {
-      const canvas = sketch.createCanvas(SKETCH_WIDTH, SKETCH_HEIGHT)
-      canvas.parent(host)
-      sketch.pixelDensity(1)
-      sketch.background('#fbfbfb')
-      sketch.strokeWeight(0.5)
+    const hostSize = () => {
+      const bounds = host.getBoundingClientRect()
+
+      return {
+        width: Math.max(1, Math.round(bounds.width || window.innerWidth)),
+        height: Math.max(1, Math.round(bounds.height || window.innerHeight)),
+      }
+    }
+
+    const seedParticles = () => {
+      xPositions.length = 0
+      yPositions.length = 0
+      colorIndices.length = 0
 
       for (let x = 0; x < sketch.width; x += SPACING) {
         for (let y = 0; y < sketch.height; y += SPACING) {
@@ -30,6 +35,23 @@ export function mountSketch(host: HTMLElement): p5 {
           colorIndices.push(Math.floor(sketch.random(COLORS.length)))
         }
       }
+    }
+
+    const resizeToHost = () => {
+      const { width, height } = hostSize()
+      sketch.resizeCanvas(width, height)
+      sketch.background('#fbfbfb')
+      seedParticles()
+    }
+
+    sketch.setup = () => {
+      const { width, height } = hostSize()
+      sketch.pixelDensity(Math.min(window.devicePixelRatio, 2))
+      const canvas = sketch.createCanvas(width, height)
+      canvas.parent(host)
+      sketch.background('#fbfbfb')
+      sketch.strokeWeight(0.5)
+      seedParticles()
     }
 
     sketch.draw = () => {
@@ -65,6 +87,14 @@ export function mountSketch(host: HTMLElement): p5 {
 
       if (reduceMotion) {
         sketch.noLoop()
+      }
+    }
+
+    sketch.windowResized = () => {
+      resizeToHost()
+
+      if (reduceMotion) {
+        sketch.redraw()
       }
     }
   }, host)

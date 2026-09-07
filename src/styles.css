@@ -1,6 +1,6 @@
 :root {
   --notice-width: 32rem;
-  --page-gutter: 3rem;
+  --page-gutter: 1.5rem;
   --notice-padding: 2.5rem;
   color: #262626;
   background: #fbfbfb;
@@ -11,6 +11,10 @@
 
 * {
   box-sizing: border-box;
+}
+
+.agent-crawler-note {
+  display: none !important;
 }
 
 html,
@@ -26,19 +30,16 @@ body {
 
 .page {
   display: grid;
-  grid-template-columns:
-    calc(var(--notice-width) + var(--page-gutter) + var(--page-gutter))
-    minmax(0, 1fr);
+  place-items: center;
   min-height: 100svh;
+  padding: var(--page-gutter);
 }
 
 .notice {
   position: relative;
   z-index: 1;
-  align-self: center;
-  width: var(--notice-width);
-  max-width: calc(100% - 2 * var(--page-gutter));
-  margin: var(--page-gutter) auto;
+  width: min(var(--notice-width), 100%);
+  margin: 0;
   border: 1px solid currentColor;
   background: rgb(251 251 251 / 92%);
   box-shadow: 0.5rem 0.5rem 0 #262626;
@@ -64,9 +65,9 @@ ul {
 
 .eyebrow {
   color: #5e4017;
-  font-size: 0.75rem;
+  font-size: 1rem;
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
@@ -81,8 +82,8 @@ ul {
 
 .location {
   color: #5e4017;
-  font-size: 0.62rem;
-  letter-spacing: 0.06em;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
   text-align: right;
   text-transform: uppercase;
   white-space: nowrap;
@@ -132,22 +133,17 @@ li::marker {
 
 .sketch {
   position: fixed;
-  inset: 0 0 0 auto;
-  width: min(
-    720px,
-    calc(
-      100vw - var(--notice-width) - var(--page-gutter) - var(--page-gutter)
-    )
-  );
+  inset: 0;
+  width: auto;
+  height: auto;
   z-index: 0;
   overflow: hidden;
+  opacity: 0.5;
   pointer-events: none;
 }
 
 .sketch canvas {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover;
+  display: block;
 }
 
 @container (max-width: 25rem) {
@@ -163,48 +159,6 @@ li::marker {
 
   h1 {
     font-size: clamp(2.4rem, 17cqi, 5.5rem);
-  }
-}
-
-@media (max-width: 62rem) and (min-width: 48.001rem) {
-  .page {
-    display: block;
-    padding: 1.5rem;
-  }
-
-  .notice {
-    max-width: 100%;
-    margin: auto;
-    background: rgb(251 251 251 / 94%);
-  }
-
-  .sketch {
-    inset: 0;
-    width: auto;
-    opacity: 0.5;
-  }
-}
-
-@media (max-width: 48rem) {
-  .page {
-    display: block;
-    min-height: 100svh;
-    padding: 1.5rem 1.25rem;
-  }
-
-  .notice {
-    width: min(var(--notice-width), 100%);
-    max-width: none;
-    margin: 0 auto;
-    background: rgb(251 251 251 / 94%);
-  }
-
-  .sketch {
-    position: fixed;
-    inset: 0;
-    width: auto;
-    height: auto;
-    opacity: 0.5;
   }
 }
 
