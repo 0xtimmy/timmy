@@ -3,9 +3,9 @@
 ## Purpose
 
 This repository contains Timmy's personal website. It should remain a small,
-legible static site with a distinctive generative p5.js animation. Simplicity,
-reproducibility, and long-term maintainability are more important than adding
-framework abstractions.
+legible static site with a centered status card over a full-viewport generative
+p5.js animation. Simplicity, reproducibility, and long-term maintainability are
+more important than adding framework abstractions.
 
 The machine-level instructions supplied by the user remain authoritative. This
 file adds repository-specific context.
@@ -19,12 +19,12 @@ The site is one static HTML document built with TypeScript, Vite, and p5.js:
 - `src/sketch.ts` owns the p5 animation in instance mode.
 - `src/styles.css` owns layout and presentation.
 - `vite.config.ts` directs generated output to `out/`.
-- Cloudflare Pages hosts the site from `master`; its build settings and runbook
-  are not yet recorded.
+- Cloudflare Pages hosts the site from `master`, runs `npm run build` from the
+  repository root, and publishes `out/`.
 
 ## Design constraints
 
-- Preserve the concept of a concise personal page with an animation beside it.
+- Preserve the centered status card over its full-viewport animation.
 - Retain TypeScript for authored behavior.
 - Retain p5.js unless the user explicitly changes direction.
 - Minimize production and development dependencies.
@@ -32,8 +32,8 @@ The site is one static HTML document built with TypeScript, Vite, and p5.js:
   or test framework without a concrete need.
 - Do not split code merely to satisfy a preferred directory shape. Each file
   and directory must have a clear responsibility.
-- Preserve the established status-card hierarchy and responsive animation
-  regimes unless a design change is scoped with the user.
+- Preserve the established status-card hierarchy and single background-canvas
+  composition unless a design change is scoped with the user.
 
 ## Working rules
 
@@ -52,14 +52,14 @@ The site is one static HTML document built with TypeScript, Vite, and p5.js:
 
 ## Validation expectations
 
-The final refresh should expose one documented check command that verifies, at
-minimum:
+The current `npm run check` command verifies:
 
 - TypeScript compilation
-- formatting and static analysis
 - a clean production build into `out/`
-- required local assets and configuration
-- basic generated-page and link integrity
+
+Formatting, additional static analysis, asset preflights, and generated-page
+integrity checks are future options. Add them only when their maintenance cost
+is justified. The rendered page currently contains no links to validate.
 
 Browser validation should cover desktop and narrow layouts, keyboard use,
 reduced-motion preferences, and animation cleanup.
@@ -67,8 +67,10 @@ reduced-motion preferences, and animation cleanup.
 ## External boundaries
 
 - p5.js is the sole runtime dependency and is pinned through npm.
-- The rendered page intentionally contains no links, contact details, remote
-  fonts, analytics, or API calls.
+- The rendered page intentionally contains no hyperlinks, email addresses,
+  social profiles, remote fonts, analytics, or API calls.
+- A source-only message for agent crawlers ships in `index.html`. It is hidden
+  from visual rendering and the accessibility tree.
 
 These boundaries must be documented and failure-tolerant. Do not alter or
 deploy external services without explicit user direction.

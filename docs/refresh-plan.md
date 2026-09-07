@@ -11,7 +11,7 @@ link-free status page.
 - Retain TypeScript and p5.
 - Do not introduce abstractions or dependencies without a concrete use.
 - Keep authored files under version control and generated output under `out/`.
-- Keep deployment work separate until the existing host is understood.
+- Keep provider-specific operational details outside the repository.
 - Keep the Nuxt baseline recoverable at commit `ee34c83`.
 
 ## Phase 0 — Baseline
@@ -22,7 +22,7 @@ link-free status page.
 - [x] Confirm the local Node and npm versions.
 - [x] Identify Cloudflare Pages as the host and `master` as its production
   branch.
-- [ ] Record the exact Pages project, URL, build settings, and procedure.
+- [x] Record the public deployment contract.
 
 ## Phase 1 — Static toolchain
 
@@ -39,14 +39,17 @@ ESLint, and Prettier dependency graph.
 ## Phase 2 — Holding page and animation
 
 - [x] Replace the old biography and project roster with a sparse status notice.
-- [x] Remove personal names, contact details, links, and remote fonts.
+- [x] Remove hyperlinks, email addresses, social profiles, and remote fonts.
 - [x] Remove the hello counter and its external API dependency.
 - [x] Port the p5 sketch to typed instance-mode code.
-- [x] Preserve the original animation behavior and palette.
+- [x] Preserve the original palette, motion, and boundary behavior while making
+  the canvas viewport-sized and resize-aware.
 - [x] Add semantic headings and an ordinary bullet list.
 - [x] Mark the animation decorative and prevent it from intercepting input.
 - [x] Add a static reduced-motion behavior.
 - [x] Add neutral page metadata and discourage indexing.
+- [x] Add an intentional crawler-only message hidden from visual and
+  accessibility presentation.
 
 ## Phase 3 — Verification and retirement
 
@@ -61,21 +64,21 @@ ESLint, and Prettier dependency graph.
 - [ ] Verify the final host serves the production build without external
   requests or path errors.
 
-Reduced-motion browser inspection remains open because no browser was connected
-to the implementation session.
+Reduced-motion browser inspection remains open.
 
 ## Deployment phase
 
 - [x] Identify Cloudflare Pages as the hosting provider.
-- [ ] Record the live URL and Pages project identifier.
-- [ ] Record the build, publish, rollback, and cache behavior.
-- [ ] Decide whether hosting-level crawler controls are desirable.
-- [ ] Add the smallest appropriate deployment automation.
-- [ ] Smoke-test the deployed page and record the runbook.
+- [x] Record the root directory (`/`), build command (`npm run build`), and
+  output directory (`out`).
+- [x] Record the live URL, [timmy.sh](https://timmy.sh).
+
+Other Cloudflare-specific configuration and operations are intentionally not
+documented in this repository.
 
 ## Later design work
 
-- [ ] Review the exact typography, spacing, and notice-box treatment.
-- [ ] Tune desktop and mobile animation composition.
+- [x] Establish the typography, spacing, and notice-box treatment.
+- [x] Center the card over a full-viewport responsive animation.
 - [ ] Revisit copy as research and work affiliations change.
 - [ ] Upgrade p5 separately if the benefit justifies visual regression work.

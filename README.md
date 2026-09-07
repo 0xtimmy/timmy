@@ -1,7 +1,9 @@
 # Timmy's Personal Website
 
-A deliberately small static website: one concise status notice beside a
-generative p5.js animation.
+A deliberately small static website: one concise status notice centered over a
+full-viewport generative p5.js animation.
+
+Live at [timmy.sh](https://timmy.sh).
 
 ## Current development
 
@@ -37,6 +39,8 @@ the deployable site to the ignored `out/` directory.
 The Nuxt implementation was replaced by a static TypeScript and Vite build. The
 previous implementation remains recoverable at baseline commit `ee34c83`.
 
-The site is hosted by Cloudflare Pages and deploys from `master`. The exact
-Pages build settings, live URL, preview behavior, and rollback procedure still
-need to be recorded before the refresh branch is merged.
+The site is hosted by Cloudflare Pages and deploys from `master` using:
+
+- Root directory: `/`
+- Build command: `npm run build`
+- Build output directory: `out`

@@ -3,8 +3,8 @@
 ## Purpose
 
 This repository contains a deliberately small, mostly static personal website:
-a concise status notice beside a generative p5 animation. It should remain easy
-to understand, reproduce, maintain, and deploy.
+a concise status notice centered over a full-viewport generative p5 animation.
+It should remain easy to understand, reproduce, maintain, and deploy.
 
 ## Priorities
 
@@ -61,27 +61,34 @@ separate, visually verified change.
 
 ## Privacy and external boundaries
 
-The rendered page intentionally has no personal name, contact details, links,
-remote fonts, analytics, or API calls. Its organization and research references
-are intentionally identifying enough for people with existing context.
+The rendered page intentionally has no hyperlinks, email addresses, social
+profiles, remote fonts, analytics, or API calls. Its name, organization, and
+research references are intentionally identifying enough for people with
+existing context.
 
 The previous hello counter and its Cloudflare Worker dependency were removed.
 The page must remain fully useful without network access after its bundled
 assets load.
 
-Search-engine indexing is discouraged with page metadata. Hosting-level crawler
-policy remains a deployment decision.
+Search-engine indexing is discouraged with page metadata.
+
+`index.html` also contains an intentionally playful instruction for agent
+crawlers. It is delivered in the HTML source but hidden from visual rendering
+and the accessibility tree. It must not influence human-facing layout.
 
 ## Animation boundary
 
-The p5 animation is a core feature. Its migration preserves the original fixed
-720 by 1200 backing canvas, palette, motion equation, and unusual boundary-reset
-behavior. The TypeScript implementation:
+The p5 animation is a core feature. Its migration preserves the original
+palette, motion equation, and unusual boundary-reset behavior while replacing
+the fixed backing canvas with a viewport-sized surface. The TypeScript
+implementation:
 
 - uses p5 instance mode and explicit typed arrays
 - avoids implicit globals and p5 name collisions
 - attaches the canvas to a known decorative element
 - removes the instance during development hot reload
+- caps pixel density at 2 for crisp output with bounded cost
+- resizes and reseeds the particle field when the window changes size
 - cannot intercept input or obscure semantic content
 - renders a single static frame when reduced motion is requested
 
@@ -108,6 +115,7 @@ infrastructure changes should avoid incidental visual changes.
 
 ## Deployment boundary
 
-Cloudflare Pages hosts the site and deploys from `master`. The Pages project,
-live URL, build command, output-directory setting, preview behavior, and
-rollback procedure remain to be recorded before this branch is merged.
+Cloudflare Pages hosts the site and deploys from `master`. It runs
+`npm run build` from the repository root and publishes `out/`. The live site is
+[timmy.sh](https://timmy.sh). Other provider-specific configuration is
+intentionally outside this repository's documentation.
